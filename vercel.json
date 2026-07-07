@@ -15,8 +15,8 @@
       "destination": "/preservar/admin.html"
     },
     {
-      "source": "/assets/(.*)",
-      "destination": "/preservar/assets/$1"
+      "source": "/assets/:path*",
+      "destination": "/preservar/assets/:path*"
     },
     {
       "source": "/styles.css",
@@ -45,7 +45,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "headers": [
         {
           "key": "X-Content-Type-Options",
