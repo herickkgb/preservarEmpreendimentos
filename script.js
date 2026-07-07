@@ -61,11 +61,6 @@ function enterpriseMessage(enterprise) {
 
 function renderEnterpriseCard(enterprise) {
   const cover = enterprise.image || enterprise.images?.[0] || "assets/hero-terrenos-baldim.png";
-  const bullets = enterprise.bullets || [];
-  const bulletMarkup = bullets.map((item) => `<li>${item}</li>`).join("");
-  const mapButton = enterprise.mapUrl
-    ? `<a class="text-link" href="${enterprise.mapUrl}" target="_blank" rel="noopener">Abrir mapa</a>`
-    : "";
 
   return `
     <article class="enterprise-card">
@@ -81,11 +76,8 @@ function renderEnterpriseCard(enterprise) {
           <span>${enterprise.size}</span>
           <span>${enterprise.status}</span>
         </div>
-        <p>${enterprise.details}</p>
-        <ul>${bulletMarkup}</ul>
         <div class="enterprise-actions">
-          <button class="button button-primary" type="button" data-open-enterprise="${enterprise.id}">Consultar disponibilidade</button>
-          ${mapButton}
+          <button class="button button-primary" type="button" data-open-enterprise="${enterprise.id}">Ver detalhes</button>
         </div>
       </div>
     </article>

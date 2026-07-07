@@ -399,6 +399,8 @@ h3 {
 }
 
 .enterprise-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--paper);
@@ -436,8 +438,9 @@ h3 {
 
 .enterprise-card-body {
   display: grid;
-  gap: 14px;
-  padding: 22px;
+  align-content: start;
+  gap: 12px;
+  padding: 18px;
 }
 
 .enterprise-card-body h3,
@@ -448,6 +451,11 @@ h3 {
 .enterprise-card-body p {
   color: var(--muted);
   line-height: 1.55;
+}
+
+.enterprise-card-body h3 {
+  font-size: 21px;
+  line-height: 1.15;
 }
 
 .enterprise-location {
@@ -485,6 +493,11 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
+  margin-top: 4px;
+}
+
+.enterprise-actions .button {
+  width: 100%;
 }
 
 .text-link {
