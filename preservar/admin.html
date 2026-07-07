@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel Admin - Preservar Empreendimentos</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#22352a" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body">
+    <header class="admin-topbar">
+      <a class="brand dark" href="index.html" aria-label="Voltar para o site">
+        <span class="brand-mark">P</span>
+        <span>
+          <strong>Preservar</strong>
+          <small>Painel administrativo</small>
+        </span>
+      </a>
+      <div class="admin-actions">
+        <button class="button button-outline" type="button" id="resetData">Restaurar exemplo</button>
+        <a class="button button-primary" href="index.html">Ver site</a>
+      </div>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <p class="section-kicker">Admin</p>
+        <h1>Painel de empreendimentos</h1>
+        <p>
+          Cadastre nome, lugar, valor, tamanho, detalhes, fotos e link do mapa. As imagens
+          são otimizadas automaticamente e, nesta versão demonstrativa, os dados ficam
+          salvos no navegador.
+        </p>
+      </section>
+
+      <section class="admin-grid">
+        <form class="admin-form" id="enterpriseForm">
+          <input type="hidden" name="id" />
+
+          <div class="form-row">
+            <label>
+              Nome do empreendimento
+              <input name="name" type="text" placeholder="Ex: Fazenda Nossa Senhora de Lourdes" required />
+            </label>
+            <label>
+              Localização
+              <input name="location" type="text" placeholder="Ex: Gameleira Palma, Baldim - MG" required />
+            </label>
+          </div>
+
+          <div class="form-row three">
+            <label>
+              Valor
+              <input name="price" type="text" placeholder="Ex: R$ 40.000,00" required />
+            </label>
+            <label>
+              Tamanho
+              <input name="size" type="text" placeholder="Ex: 1.000 m²" required />
+            </label>
+            <label>
+              Situação
+              <input name="status" type="text" placeholder="Ex: Posse imediata" required />
+            </label>
+          </div>
+
+          <label>
+            Detalhes
+            <textarea name="details" rows="5" placeholder="Descreva o empreendimento, documentação, regras e diferenciais." required></textarea>
+          </label>
+
+          <label>
+            Destaques, um por linha
+            <textarea name="bullets" rows="5" placeholder="Área rural em regularização&#10;Padrão colonial&#10;Posse imediata"></textarea>
+          </label>
+
+          <div class="form-row">
+            <label>
+              Link do mapa
+              <input name="mapUrl" type="url" placeholder="https://www.google.com/maps/..." />
+            </label>
+            <label>
+              Fotos do empreendimento
+              <input name="imageFiles" type="file" accept="image/*" multiple />
+            </label>
+          </div>
+
+          <div class="image-preview" id="imagePreview">
+            <div class="preview-grid"></div>
+            <span>Prévia das fotos</span>
+          </div>
+
+          <div class="admin-form-actions">
+            <button class="button button-primary" type="submit">Salvar empreendimento</button>
+            <button class="button button-outline" type="button" id="clearForm">Limpar formulário</button>
+          </div>
+        </form>
+
+        <aside class="admin-list-panel">
+          <div class="section-heading compact">
+            <p class="section-kicker">Cadastros</p>
+            <h2>Empreendimentos salvos</h2>
+          </div>
+          <div class="admin-list" id="adminList"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
